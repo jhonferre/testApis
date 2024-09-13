@@ -1,13 +1,13 @@
 package co.com.screenplay.project.models;
 
 public class SharedData {
-    private static Integer customerId;
+    private static String customerId;
 
-    public static Integer getCustomerId() {
+    public static String getCustomerId() {
         return customerId;
     }
 
-    public static void setCustomerId(Integer id) {
+    public static void setCustomerId(String id) {
         customerId = id;
     }
 }

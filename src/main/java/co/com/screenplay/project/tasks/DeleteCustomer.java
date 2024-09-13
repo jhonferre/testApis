@@ -3,6 +3,7 @@ package co.com.screenplay.project.tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.rest.interactions.Delete;
 import net.thucydides.core.annotations.Step;
 
@@ -14,7 +15,7 @@ public class DeleteCustomer implements Task {
     }
 
     public static Performable byId(String customerId) {
-        return new DeleteCustomer(customerId);
+        return Tasks.instrumented(DeleteCustomer.class,customerId);
     }
 
     @Override

@@ -12,7 +12,7 @@ Feature: Customer Management
 
   Scenario: Get customers by ID
     When I send a request to get the customer by ID
-    Then I should receive a list of customers
+    Then I should receive a customer with valid details
 
   Scenario: Update a customer
     Given I have the following customer data

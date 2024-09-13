@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 import net.thucydides.core.annotations.Step;
 
@@ -17,7 +18,7 @@ public class CreateCustomer implements Task {
     }
 
     public static Performable withData(CustomerData customerData) {
-        return new CreateCustomer(customerData);
+        return Tasks.instrumented(CreateCustomer.class,customerData);
     }
 
     @Override
