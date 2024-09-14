@@ -28,10 +28,6 @@ public class CustomerData {
     public Map<String, Object> getData() {
         return data;
     }
-
-    public void setData(Map<String, Object> data) {
-        this.data = data;
-    }
     // Setters para cada campo
     public void setIdentityDocument(int identityDocument) {
         data.put("identityDocument", identityDocument);
