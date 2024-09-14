@@ -1,39 +1,41 @@
-# Autor: Alejandro Polo Carvajal
-#### https://www.linkedin.com/in/alejandro-polo-carvajal-790b79186/
-##### ------------------------------------------------------------------------------------------------------
-# Curso Automation screenplay basic
-##### ------------------------------------------------------------------------------------------------------
+# Proyecto de Automatización de APIs
 
-#### Pagina automatizada: https://demoqa.com/
-#### Funciones automatizadas: ID CARD ELEMENTS
-#### Patron de diseño: Screenplay
-#### Framework: gherkin, cucumber, Junit, SerenityBDD, selenium
-#### Framework adicionales: librerias lombok, Faker, SonarLink, cucumber for java
-#### Lenguaje programacion: Java
-#### version gradle: gradle-8.4
-#### OPEN_JDK Version 17.0.9
-#### Driver: Edge version  120.0.2210.121
-#### ID: Intellij IDEA community Edition 2023.1
-##### ------------------------------------------------------------------------------------------------------
+Este proyecto contiene pruebas automatizadas para verificar el correcto funcionamiento de los endpoints de una API de clientes.
 
-### Todos los casos pruebas cumplen con cada criterio solicitado
-### Todas las clases estan con auto-ident lines y reformat code
-### El codigo no tiene ningun Bug o codeSmell
-##### ------------------------------------------------------------------------------------------------------
-# PASOS PARA LA EJECUCIÓN
+## Pruebas Realizadas
 
-## Opcion 1
-### PASO A PASO PARA LA EJECUCIÓN POR CONSOLA
+### 1. Prueba de Automatización de Búsqueda de Cliente (GET)
 
-### Comando para limpiar el proyecto y luego ejecuta TODOS los escenarios uno por uno
-#### ./gradlew clean test
+#### Descripción
+- **Endpoint:** `/customers/{id}`
+- **Objetivo:** Verificar que el endpoint devuelve el estado correcto y los datos del cliente según su existencia.
 
-### Comando para ejecutar por feature
-#### ./gradlew test --tests "co.com.screenplay.project.runners.RunnerOpenWeb"
-#### ./gradlew test --tests "co.com.screenplay.project.runners" --- TODO LOS FEATURES
+#### Casos de Prueba
+- **Cliente Existente:**
+    - Verificar que el endpoint devuelve el estado `200 OK` y los datos del cliente.
+- **Cliente No Existente:**
+    - Verificar que el endpoint devuelve el estado `404 NOT FOUND` y la descripción del error.
 
-### Comando para generar reporte despues que haya terminado un test (Por consola arrojara la ruta .html )
-#### ./gradlew reports
+### 2. Prueba de Automatización de Creación de Cliente (POST)
 
-### Comando para limpiar la carpeta Target (Reportes)
-#### ./gradlew clearReports
+#### Descripción
+- **Endpoint:** `/customers`
+- **Objetivo:** Verificar que el endpoint maneja correctamente la creación de clientes con datos válidos e inválidos.
+
+#### Casos de Prueba
+- **Datos Válidos:**
+    - Verificar que el endpoint devuelve el estado `201 Created` y el ID del cliente creado.
+- **Datos Inválidos:**
+    - Verificar que el endpoint devuelve el estado `400 Bad Request` y un mensaje de error descriptivo.
+
+## Requisitos
+
+- **Java:** 17
+- **Gradle:** 7.2 o superior
+
+## Ejecución de Pruebas
+
+Para ejecutar las pruebas, utiliza el siguiente comando:
+
+```sh
+gradle clean test aggregate

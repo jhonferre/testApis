@@ -8,6 +8,9 @@ public class UserAssertionErrors extends AssertionError {
     public static final String USER_NOT_UPDATED = "User not updated correctly";
     public static final String USER_NOT_DELETED = "User not deleted correctly";
     public static final String RESPONSE_BODY_NOT_CORRECT = "Response body is not correct";
+    public static final String CUSTOMER_NOT_FOUND = "Customer was found when it should not exist";
+    public static final String CUSTOMER_CREATION_FAILED = "Customer creation did not fail as expected";
+    public static final String ERROR_MESSAGE_INCORRECT = "Error message is not correct";
 
 
 

@@ -32,4 +32,20 @@ public class CustomerData {
     public void setData(Map<String, Object> data) {
         this.data = data;
     }
+    // Setters para cada campo
+    public void setIdentityDocument(int identityDocument) {
+        data.put("identityDocument", identityDocument);
+    }
+
+    public void setDocumentType(String documentType) {
+        data.put("documentType", documentType);
+    }
+
+    public void setFullName(String fullName) {
+        data.put("fullName", fullName);
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        data.put("dateOfBirth", dateOfBirth);
+    }
 }
